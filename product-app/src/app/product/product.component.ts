@@ -9,19 +9,22 @@ import { LoaderService } from '../services/utility/loader.service';
 })
 export class ProductComponent {
   products: any = [];
+  searchtext = '';
   constructor(
     private productService: ProductService,
     private loaderService: LoaderService
   ) {
-
+    window.addEventListener("controlRemoteCounter", (e: any) => {
+      this.getAllProducts(e?.detail)
+    })
   }
   ngOnInit() {
     this.getAllProducts()
   }
 
-  getAllProducts() {
+  getAllProducts(search?: string) {
     this.loaderService.show();
-    this.productService.getAllProducts().subscribe((response: any) => {
+    this.productService.getAllProducts(search).subscribe((response: any) => {
       this.loaderService.hide();
       console.log(response)
       this.products = response.products;
@@ -29,5 +32,13 @@ export class ProductComponent {
       this.loaderService.hide();
       console.error(err.error.message);
     })
+  }
+
+  searchProduct() {
+    this.getAllProducts(this.searchtext)
+  }
+  resetProductSearch() {
+    this.searchtext = '';
+    this.getAllProducts(this.searchtext)
   }
 }

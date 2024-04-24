@@ -22,7 +22,20 @@ const routes: Routes = [{
     }).then(m => m.ProductModule).catch(error =>
       console.log('Error=>', error));
   }
+},
+
+{
+  path: 'search',
+  loadChildren: () => {
+    return loadRemoteModule({
+      remoteEntry: "http://localhost:4400/remoteEntry.js",
+      remoteName: 'searchApp',
+      exposedModule: './SearchModule'
+    }).then(m => m.SearchModule).catch(error =>
+      console.log('Error=>', error));
+  }
 }
+
 ];
 
 

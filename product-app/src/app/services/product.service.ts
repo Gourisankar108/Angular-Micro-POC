@@ -9,7 +9,10 @@ export class ProductService {
     private httpService: HttpService,
   ) { }
 
-  getAllProducts() {
-    return this.httpService.get('products');
+  getAllProducts(search?: string) {
+    const searchquery = search?'/search?q=' + search : ''
+    return this.httpService.get('products' + searchquery);
   }
+
+
 }
