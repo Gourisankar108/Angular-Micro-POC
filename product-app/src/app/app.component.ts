@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoaderService } from './services/utility/loader.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'product-app';
+  showSpinner = false;
+  constructor(private loaderService: LoaderService){
+    this.loaderService.spinner$.subscribe((data: boolean) => {
+      setTimeout(() => {
+        this.showSpinner = data ? data : false;
+      });
+      console.log(this.showSpinner);
+    });
+  }
 }

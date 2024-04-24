@@ -1,0 +1,34 @@
+.text-elliple {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
+.img-fluid {
+    height: 200px;
+    margin: auto;
+    display: block;
+    padding: 15px;
+}
+
+.staticleft {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.staticright {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.product-card {
+    cursor: pointer !important;
+}
+
+.product-card:hover {
+    transform: scale(1.01);
+}

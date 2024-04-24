@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+.hide {
+  display: none !important;
+}
+
+app-spinner {
+    position: fixed;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    top:0;
+    background: #fff;
+    opacity: 0.5;
+}
+
+.form-inline, .navbar-nav{
+    display: flex;
+    flex-direction: row !important;
+}

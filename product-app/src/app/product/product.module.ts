@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ProductRoutingModule } from './product-routing.module';
 import { ProductComponent } from './product.component';
+import { BrowserModule } from '@angular/platform-browser';
 
 
 @NgModule({
@@ -11,6 +12,7 @@ import { ProductComponent } from './product.component';
   ],
   imports: [
     CommonModule,
+    BrowserModule,
     ProductRoutingModule
   ]
 })
