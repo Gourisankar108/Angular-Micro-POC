@@ -1,15 +1,18 @@
 <nav class="navbar navbar-dark bg-dark">
-  <ul class="navbar-nav mr-auto">
+  <ul class="navbar-nav mr-auto" style="flex-direction: row !important;">
     <li class="nav-item active">
-      <a class="nav-link" href="home">Home</a>
+      <a class="nav-link" routerLink="home">Home</a>
     </li>
     <li class="nav-item">
-      <a class="nav-link" href="product">Product</a>
+      <a class="nav-link" routerLink="product">Product</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="post">Post</a>
     </li>
   </ul>
 
-  <div class="input-group mb-3" *ngIf="router.url.includes('product')">
-    <input type="text" class="form-control" placeholder="Search products" [(ngModel)]= "searchitem"> 
+  <div class="input-group mb-3" *ngIf="router.url.includes('product')" style="flex-direction: row !important;">
+    <input type="text" class="form-control" placeholder="Search products" [(ngModel)]= "searchitem" (keyup.enter)="handleProductSearch()"> 
     <div class="input-group-append">
       <button class="btn btn-outline-primary" id="btnSearch" type="button" (click)="handleProductSearch()">Search</button>
       <button class="btn btn-outline-warning" id="btnReset" (click)="resetProductSearch()">Reset</button>

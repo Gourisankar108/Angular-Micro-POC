@@ -3,7 +3,7 @@
 	"version": 1,
 	"newProjectRoot": "projects",
 	"projects": {
-		"search-app": {
+		"post-app": {
 			"projectType": "application",
 			"schematics": {
 				"@schematics/angular:component": {
@@ -17,7 +17,7 @@
 				"build": {
 					"builder": "ngx-build-plus:browser",
 					"options": {
-						"outputPath": "dist/search-app",
+						"outputPath": "dist/post-app",
 						"index": "src/index.html",
 						"main": "src/main.ts",
 						"polyfills": [
@@ -30,10 +30,9 @@
 							"src/assets"
 						],
 						"styles": [
-							"node_modules/bootstrap/dist/css/bootstrap.min.css",
 							"src/styles.scss"
 						],
-						"scripts": ["node_modules/bootstrap/dist/js/bootstrap.min.js"],
+						"scripts": [],
 						"extraWebpackConfig": "webpack.config.js",
 						"commonChunk": false
 					},
@@ -60,7 +59,13 @@
 							"vendorChunk": true,
 							"extractLicenses": false,
 							"sourceMap": true,
-							"namedChunks": true
+              "namedChunks": true,
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.development.ts"
+                }
+              ]
 						}
 					},
 					"defaultConfiguration": "production"
@@ -69,24 +74,24 @@
 					"builder": "ngx-build-plus:dev-server",
 					"configurations": {
 						"production": {
-							"browserTarget": "search-app:build:production",
+							"browserTarget": "post-app:build:production",
 							"extraWebpackConfig": "webpack.prod.config.js"
 						},
 						"development": {
-							"browserTarget": "search-app:build:development"
+							"browserTarget": "post-app:build:development"
 						}
 					},
 					"defaultConfiguration": "development",
 					"options": {
-						"port": 4400,
-						"publicHost": "http://localhost:4400",
+						"port": 4500,
+						"publicHost": "http://localhost:4500",
 						"extraWebpackConfig": "webpack.config.js"
 					}
 				},
 				"extract-i18n": {
 					"builder": "ngx-build-plus:extract-i18n",
 					"options": {
-						"browserTarget": "search-app:build",
+						"browserTarget": "post-app:build",
 						"extraWebpackConfig": "webpack.config.js"
 					}
 				},
