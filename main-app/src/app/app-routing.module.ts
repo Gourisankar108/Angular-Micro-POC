@@ -26,6 +26,7 @@ const routes: Routes = [{
 
 {
   path: 'search',
+  // loadChildren:()=>import('searchApp/SearchModule').then(m=>m.SearchModule)
   loadChildren: () => {
     return loadRemoteModule({
       remoteEntry: "http://localhost:4400/remoteEntry.js",

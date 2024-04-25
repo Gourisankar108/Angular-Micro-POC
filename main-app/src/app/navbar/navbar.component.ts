@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 export class NavbarComponent {
 
   searchitem = '';
-  constructor(private router: Router) {
+  constructor(public router: Router) {
   }
 
   handleProductSearch() {

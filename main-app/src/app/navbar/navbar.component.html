@@ -8,7 +8,7 @@
     </li>
   </ul>
 
-  <div class="input-group mb-3">
+  <div class="input-group mb-3" *ngIf="router.url.includes('product')">
     <input type="text" class="form-control" placeholder="Search products" [(ngModel)]= "searchitem"> 
     <div class="input-group-append">
       <button class="btn btn-outline-primary" id="btnSearch" type="button" (click)="handleProductSearch()">Search</button>

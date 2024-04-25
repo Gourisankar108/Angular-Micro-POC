@@ -15,7 +15,7 @@ export class ProductComponent {
     private loaderService: LoaderService
   ) {
     window.addEventListener("controlRemoteCounter", (e: any) => {
-      this.getAllProducts(e?.detail)
+        this.getAllProducts(e?.detail)
     })
   }
   ngOnInit() {
@@ -23,11 +23,13 @@ export class ProductComponent {
   }
 
   getAllProducts(search?: string) {
+    search = search ? search : 'all';
     this.loaderService.show();
     this.productService.getAllProducts(search).subscribe((response: any) => {
       this.loaderService.hide();
       console.log(response)
       this.products = response.products;
+      // this.ref.detectChanges();
     }, (err) => {
       this.loaderService.hide();
       console.error(err.error.message);
