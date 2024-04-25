@@ -1,0 +1,17 @@
+.post {
+    background: #fff;
+    padding: 1em;
+}
+
+.post:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+}
+
+.post h2 {
+    font-size: 1.3em;
+    padding-bottom: 0.25rem;
+}
+
+.post p {
+    color: #888;
+}

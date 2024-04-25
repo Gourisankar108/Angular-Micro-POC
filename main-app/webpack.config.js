@@ -37,8 +37,9 @@ module.exports = {
 
       // // // For hosts (please adjust)
       remotes: {
-        "productApp": "http://localhost:4300/remoteEntry.js",
-        "searchApp": "http://localhost:4400/remoteEntry.js",
+        "productApp": "product@http://localhost:4300/remoteEntry.js",
+        // "searchApp": "search@http://localhost:4400/remoteEntry.js",
+        "post": "post@http://localhost:4500/remoteEntry.js",
       },
 
       shared: share({

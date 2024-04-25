@@ -1,9 +1,10 @@
-import {  NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SearchModule } from './search/search.module';
+import { PostModule } from './post/post.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -11,10 +12,11 @@ import { SearchModule } from './search/search.module';
   ],
   imports: [
     BrowserModule,
-    SearchModule,
+    PostModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
