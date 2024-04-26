@@ -12,7 +12,8 @@
   </ul>
 
   <div class="input-group mb-3" *ngIf="router.url.includes('product')" style="flex-direction: row !important;">
-    <input type="text" class="form-control" placeholder="Search products" [(ngModel)]= "searchitem" (keyup.enter)="handleProductSearch()"> 
+    <input type="text" class="form-control" placeholder="Search products" [(ngModel)]= "searchitem" 
+    (keyup.enter)="handleProductSearch()"> 
     <div class="input-group-append">
       <button class="btn btn-outline-primary" id="btnSearch" type="button" (click)="handleProductSearch()">Search</button>
       <button class="btn btn-outline-warning" id="btnReset" (click)="resetProductSearch()">Reset</button>
