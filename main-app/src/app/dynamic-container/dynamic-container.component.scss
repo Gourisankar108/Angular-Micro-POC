@@ -3,9 +3,15 @@
 ul li {
   list-style: none;
 }
-
+#itemList{
+  width: 200px;
+  border: 1px solid;
+  padding: 15px;
+}
 #itemList li{
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  width: 100px;
+  border-bottom: 1px dotted;
 }
