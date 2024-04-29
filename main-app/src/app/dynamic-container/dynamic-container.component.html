@@ -1,0 +1,10 @@
+<p>dynamic-container works!</p>
+<ul id="itemList">
+    <li (click)="createComponent(productNames.mobile)">Mobile</li>
+    <li (click)="createComponent(productNames.laptop)">Laptop</li>
+    <li (click)="createComponent(productNames.watch)">Watch</li>
+</ul>
+
+<div class="display">
+    <ng-container #container></ng-container>
+</div>
