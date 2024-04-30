@@ -1,4 +1,4 @@
-<nav class="navbar navbar-dark bg-dark">
+<nav class="navbar sticky-top navbar-dark bg-dark">
   <ul class="navbar-nav mr-auto" style="flex-direction: row !important;">
     <li class="nav-item active">
       <a class="nav-link" routerLink="home">Home</a>
@@ -10,13 +10,16 @@
       <a class="nav-link" routerLink="post">Post</a>
     </li>
   </ul>
+  <p id="selectedProd" *ngIf="selectedProduct">Selected Product : {{selectedProduct}} </p>
 
   <div class="input-group mb-3" *ngIf="router.url.includes('product')" style="flex-direction: row !important;">
-    <input type="text" class="form-control" placeholder="Search products" [(ngModel)]= "searchitem" 
-    (keyup.enter)="handleProductSearch()"> 
+    <input type="text" class="form-control" placeholder="Search products" [(ngModel)]="searchitem"
+      (keyup.enter)="handleProductSearch()">
     <div class="input-group-append">
-      <button class="btn btn-outline-primary" id="btnSearch" type="button" (click)="handleProductSearch()">Search</button>
+      <button class="btn btn-outline-primary" id="btnSearch" type="button"
+        (click)="handleProductSearch()">Search</button>
       <button class="btn btn-outline-warning" id="btnReset" (click)="resetProductSearch()">Reset</button>
     </div>
   </div>
+ 
 </nav>

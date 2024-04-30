@@ -14,8 +14,8 @@ export class ProductComponent {
     private productService: ProductService,
     private loaderService: LoaderService
   ) {
-    window.addEventListener("controlRemoteCounter", (e: any) => {
-        this.getAllProducts(e?.detail)
+    window.addEventListener("hostSearchEvent", (e: any) => {
+      this.getAllProducts(e?.detail)
     })
   }
   ngOnInit() {
@@ -42,5 +42,11 @@ export class ProductComponent {
   resetProductSearch() {
     this.searchtext = '';
     this.getAllProducts(this.searchtext)
+  }
+
+  selectProduct(prod: any) {
+    const customEvent = new CustomEvent("remoteProductSelect", { detail: prod.title });
+    window.dispatchEvent(customEvent);
+
   }
 }

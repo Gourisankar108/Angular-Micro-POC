@@ -9,11 +9,16 @@ import { Router } from '@angular/router';
 export class NavbarComponent {
 
   searchitem = '';
+  selectedProduct='';
+
   constructor(public router: Router) {
+    window.addEventListener("remoteProductSelect", (e: any) => {
+      this.selectedProduct = e.detail;
+    })
   }
 
   handleProductSearch() {
-    const customEvent = new CustomEvent("controlRemoteCounter", { detail: this.searchitem });
+    const customEvent = new CustomEvent("hostSearchEvent", { detail: this.searchitem });
     window.dispatchEvent(customEvent);
 
     setTimeout(() => {

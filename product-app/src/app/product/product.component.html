@@ -11,7 +11,7 @@
 
     <div class="row mt-3">
         <div class="col-sm-3 p-2" *ngFor="let prod of products; index as i">
-            <div class="card product-card">
+            <div class="card product-card" (click)="selectProduct(prod)">
                 <div class="profile-card">
                     <img class="img-fluid" [src]="prod.thumbnail">
                     <button class="btn btn-sm btn-info staticleft">{{ prod.brand }}</button>
